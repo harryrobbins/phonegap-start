@@ -29,6 +29,7 @@
 		  <div class="app_button" id="map_button">Show My Location</div>
   	      <div class="app_button" id="settings_button">Settings</div>
   	      <div class="app_button" id="videos_button">Videos</div>
+  	      <div class="app_button" id="gmap_button">Gmap</div>
 		</div>
 
 		<div id="map" class="view">
@@ -73,10 +74,38 @@
 			</a>
 		  <div class="app_button" id="welcome_button">Go Back</div>
 		</div>
+		
 		<div id="play_video" class="view">
 			<iframe id='video_player' width="560" height="315" src="http://www.youtube.com/embed/AxsjRmN9syc" frameborder="0" allowfullscreen></iframe>
 		  <div class="app_button" id="welcome_button">Go Back</div>
 		</div>
+		
+		<div id="gmap" class="view">
+			<div id='map_canvas' height='80%' width='80%' style='display:block;'>Google map here</div>
+		  <div class="app_button" id="welcome_button">Go Back</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+		
+window.mapReady = function(){
+        // you can go with map loaded
+		//initializeGmap();
+		//console.log('initialising Gmap');
+};
 
+function loadScript() {     
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.id = 'maps-script';
+    script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&' +
+        'callback=mapReady';
+   //callback is the name of function to call once map script loaded
+    document.body.appendChild(script);
+	console.log(script, 'added script');
+}
+ //Call to load map script
+loadScript();
+</script>
 	</body>
 </html>

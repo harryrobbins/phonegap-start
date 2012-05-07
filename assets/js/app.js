@@ -61,4 +61,29 @@ run(function () {
 		 x$('#video_player').attr('src', "http://www.youtube.com/embed/AxsjRmN9syc");
         display('#play_video');
     });
+	 when('#gmap', function () {
+		console.log('initialising Gmap2');
+		  var mapDiv = document.getElementById('map_canvas');
+			console.log(mapDiv, 'loading gmap into div');
+		  var map = new google.maps.Map(mapDiv, {
+			center: new google.maps.LatLng(37.4419, -122.1419),
+			zoom: 13,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		  });
+			console.log(mapDiv, 'loaded Gmap?');
+		console.log(input, 'gmap');
+        display('#gmap');
+    });
+
 });
+
+	function initializeGmap() {
+			console.log(script, 'initialising Gmap2');
+		  var mapDiv = document.getElementById('map_canvas');
+		  var map = new google.maps.Map(mapDiv, {
+			center: new google.maps.LatLng(37.4419, -122.1419),
+			zoom: 13,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		  });
+			console.log(map, 'loaded Gmap?');
+		}
