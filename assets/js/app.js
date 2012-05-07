@@ -53,4 +53,12 @@ run(function () {
         });
         display('#welcome');
     });
+	 when('#videos', function (input) {
+        display('#videos');
+    });
+	 when('#play_video', function (input) {
+		console.log(input, 'video player');
+		 x$('#video_player').attr('src', "http://www.youtube.com/embed/AxsjRmN9syc");
+        display('#play_video');
+    });
 });
